@@ -1,0 +1,74 @@
+html{
+    font-family: sans-serif;
+    font-size:20px;
+}
+
+.flashcard-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 350px;
+}
+
+.flashcard {
+    position: relative;
+    width: 350px; /* Adjust width as needed */
+    height: 350px; /* Adjust height as needed */
+    perspective: 1000px; /* Enable 3D effect */
+    cursor: pointer;
+}
+
+.front,
+.back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backface-visibility: hidden; /* Hide backface of flipped elements */
+    transition: transform 0.6s ease; /* Smooth flip animation */
+    font-size: 20px;
+    margin: 0 auto;
+    color: white;
+}
+
+.back {
+    transform: rotateY(180deg); /* Initially hide the back side */
+    background-color: #21395c;
+    padding: 9%;
+    perspective: 1000px;
+}
+
+.front{
+    background-color: #57a5ff;
+    padding: 9%;
+}
+
+.flipped .front {
+    transform: rotateY(180deg); /* Rotate front side to hide it */
+}
+
+.flipped .back {
+    transform: rotateY(0deg); /* Rotate back side to show it */
+}
+
+#nextButton {
+    margin-top: 20%;
+    width: 150px;
+    height: 50px;
+    border: none;
+    background-color: #3ac13a;
+    color: white;
+    border-radius: 5px;
+}
+
+#randomButton{
+    margin-top: 20%;
+    width: 150px;
+    height: 50px;
+    border: none;
+    background-color: #d02ea8;
+    color: white;
+    border-radius: 5px;
+}
